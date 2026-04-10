@@ -1,0 +1,8 @@
+# Force LF line endings for all files in this repo
+* text=auto eol=lf
+
+# Explicitly enforce LF for shell scripts and Docker
+Dockerfile text eol=lf
+*.sh text eol=lf
+apps/pocketbase/pb_hooks/** text eol=lf
+apps/pocketbase/pb_migrations/** text eol=lf

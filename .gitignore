@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# PocketBase data (never commit database files)
+apps/pocketbase/pb_data/
+
+# PocketBase binary (platform-specific, downloaded in Dockerfile)
+apps/pocketbase/pocketbase
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
