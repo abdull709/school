@@ -15,4 +15,4 @@ COPY apps/pocketbase/pb_hooks /app/pb_hooks
 
 EXPOSE 8090
 
-CMD sh -c "/app/pocketbase serve --http=0.0.0.0:${PORT:-8090} --dir=/app/pb_data --migrationsDir=/app/pb_migrations --hooksDir=/app/pb_hooks --hooksWatch=false"
+CMD ["/bin/sh", "-c", "exec /app/pocketbase serve --http=0.0.0.0:${PORT:-8090} --dir=/app/pb_data --migrationsDir=/app/pb_migrations --hooksDir=/app/pb_hooks --hooksWatch=false"]
