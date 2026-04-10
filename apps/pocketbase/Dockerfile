@@ -13,8 +13,6 @@ RUN wget -q https://github.com/pocketbase/pocketbase/releases/download/v${PB_VER
 COPY pb_migrations /app/pb_migrations
 COPY pb_hooks /app/pb_hooks
 
-VOLUME /app/pb_data
-
 EXPOSE 8090
 
 CMD sh -c "/app/pocketbase serve --http=0.0.0.0:${PORT:-8090} --dir=/app/pb_data --migrationsDir=/app/pb_migrations --hooksDir=/app/pb_hooks --hooksWatch=false"
