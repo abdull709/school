@@ -10,8 +10,8 @@ RUN wget -q https://github.com/pocketbase/pocketbase/releases/download/v${PB_VER
     && rm pocketbase_${PB_VERSION}_linux_amd64.zip \
     && chmod +x /app/pocketbase
 
-COPY pb_migrations /app/pb_migrations
-COPY pb_hooks /app/pb_hooks
+COPY apps/pocketbase/pb_migrations /app/pb_migrations
+COPY apps/pocketbase/pb_hooks /app/pb_hooks
 
 EXPOSE 8090
 
