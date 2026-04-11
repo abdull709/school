@@ -12,7 +12,9 @@ RUN wget -q https://github.com/pocketbase/pocketbase/releases/download/v${PB_VER
 
 COPY apps/pocketbase/pb_migrations /app/pb_migrations
 COPY apps/pocketbase/pb_hooks /app/pb_hooks
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
 
 EXPOSE 8090
 
-CMD ["/app/pocketbase", "serve", "--http=0.0.0.0:8090", "--encryptionEnv=PB_ENCRYPTION_KEY", "--dir=/app/pb_data", "--migrationsDir=/app/pb_migrations", "--hooksDir=/app/pb_hooks", "--hooksWatch=false"]
+CMD ["/app/start.sh"]
